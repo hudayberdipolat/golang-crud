@@ -2,7 +2,6 @@ package app
 
 import (
 	"github.com/hudayberdipolat/golang-crud/pkg/config"
-	dbconfig "github.com/hudayberdipolat/golang-crud/pkg/database/dbConfig"
 	"gorm.io/gorm"
 )
 
@@ -17,14 +16,14 @@ func GetAppDependencies() (*Dependency, error) {
 		return nil, err
 	}
 
-	getDBConfig := dbconfig.NewDatabaseConfig(getConfig)
-	getDbConnection, err := getDBConfig.GetDBConnection()
-	if err != nil {
-		return nil, err
-	}
+	// getDBConfig := dbconfig.NewDatabaseConfig(getConfig)
+	// getDbConnection, err := getDBConfig.GetDBConnection()
+	// if err != nil {
+	// 	return nil, err
+	// }
 
 	return &Dependency{
 		Config:   getConfig,
-		DbConfig: getDbConnection,
+		DbConfig: nil,
 	}, nil
 }
