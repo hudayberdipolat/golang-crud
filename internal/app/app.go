@@ -22,5 +22,4 @@ func NewApp(dependencies *Dependency) (httpServer *fiber.App) {
 		AllowMethods: []string{"GET,POST,HEAD,PUT,DELETE,PATCH"},
 	}))
 	return httpServer
-
 }
